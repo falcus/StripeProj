@@ -21,4 +21,5 @@ from . import views
 urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
+    path('process-payment/', views.process_payment, name = 'process_payment' )
 ]

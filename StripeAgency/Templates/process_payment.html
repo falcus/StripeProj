@@ -1,0 +1,13 @@
+<form method="POST" action="{% url 'process_payment' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{ settings.STRIPE_PUBLISHABLE_KEY }}"
+        data-amount="1000"
+        data-name="Example.com"
+        data-description="Example charge"
+        data-image="/img/documentation/checkout/marketplace.png"
+        data-locale="auto"
+        data-currency="usd">
+    </script>
+</form>
